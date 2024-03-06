@@ -52,7 +52,7 @@ if button0:
         maxtemp = (i + 0.5)
         df1 = data.loc[(data['HR'] >= minhour) & (data['HR'] <= maxhour) & (data['T2M'] > mintemp) & (data['T2M'] <= maxtemp)]
         results['Temperature'].append(i)
-        results['Count'].append(len(df1))
+        results['Total no of hour'].append(len(df1))
         df2 = df1.loc[(df1['RH2M'] > 0) & (df1['RH2M'] <= 10)]
         df3 = df1.loc[(df1['RH2M'] > 10) & (df1['RH2M'] <= 20)]
         df4 = df1.loc[(df1['RH2M'] > 20) & (df1['RH2M'] <= 30)]
@@ -77,7 +77,7 @@ if button0:
     result_df = pd.DataFrame(results)
     st.dataframe(result_df)
     t = result_df['Temperature']
-    v = result_df['Count']
+    v = result_df['Total no of hour']
 
 
 
