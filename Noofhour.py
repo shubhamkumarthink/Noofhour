@@ -23,7 +23,7 @@ st.dataframe(data)
 
 appointment = st.slider(
     "Select the range of hour:",
-    value=(time(10), time(18)), step=timedelta(hours=1))
+    value=(time(9), time(18)), step=timedelta(hours=1))
 start_time, end_time = appointment
 
 minhour = start_time.hour
