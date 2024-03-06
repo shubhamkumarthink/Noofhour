@@ -20,8 +20,6 @@ st.dataframe(data)
 
 # minhour = st.number_input("Enter min value of hour of range (from 0 to 23): ", value=None, min_value=0, max_value=23, placeholder="Type a number...")
 # maxhour = st.number_input("Enter max value of hour of range (upto 23): ", value=None, min_value=0, max_value=23, placeholder="Type a number...")
-x = 5
-y1 = 45
 
 appointment = st.slider(
     "Select the range of hour:",
