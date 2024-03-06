@@ -35,7 +35,17 @@ y1 = st.number_input("Enter max value of temperature of range in integer: ", val
 
 button0 = st.button("Visualize")
 if button0:
-    results = {'Temperature': [], 'Count': []}
+    results = {'Temperature': [], 'Total no of hour': [],
+               'No of hr in Humidity range (0-10)': [],
+               'No of hr in Humidity range (10-20)': [],
+               'No of hr in Humidity range (20-30)': [],
+               'No of hr in Humidity range (30-40)': [],
+               'No of hr in Humidity range (40-50)': [],
+               'No of hr in Humidity range (50-60)': [],
+               'No of hr in Humidity range (60-70)': [],
+               'No of hr in Humidity range (70-80)': [],
+               'No of hr in Humidity range (80-90)': [],
+               'No of hr in Humidity range (90-100)': []}
     y = 1 + y1
     for i in range(x, y):
         mintemp = (i - 0.5)
@@ -43,6 +53,26 @@ if button0:
         df1 = data.loc[(data['HR'] >= minhour) & (data['HR'] <= maxhour) & (data['T2M'] > mintemp) & (data['T2M'] <= maxtemp)]
         results['Temperature'].append(i)
         results['Count'].append(len(df1))
+        df2 = df1.loc[(df1['RH2M'] > 0) & (df1['RH2M'] <= 10)]
+        df3 = df1.loc[(df1['RH2M'] > 10) & (df1['RH2M'] <= 20)]
+        df4 = df1.loc[(df1['RH2M'] > 20) & (df1['RH2M'] <= 30)]
+        df5 = df1.loc[(df1['RH2M'] > 30) & (df1['RH2M'] <= 40)]
+        df6 = df1.loc[(df1['RH2M'] > 40) & (df1['RH2M'] <= 50)]
+        df7 = df1.loc[(df1['RH2M'] > 50) & (df1['RH2M'] <= 60)]
+        df8 = df1.loc[(df1['RH2M'] > 60) & (df1['RH2M'] <= 70)]
+        df9 = df1.loc[(df1['RH2M'] > 70) & (df1['RH2M'] <= 80)]
+        df10 = df1.loc[(df1['RH2M'] > 80) & (df1['RH2M'] <= 90)]
+        df11 = df1.loc[(df1['RH2M'] > 90) & (df1['RH2M'] <= 100)]
+        results['No of hr in Humidity range (0-10)'].append(len(df2))
+        results['No of hr in Humidity range (10-20)'].append(len(df3))
+        results['No of hr in Humidity range (20-30)'].append(len(df4))
+        results['No of hr in Humidity range (30-40)'].append(len(df5))
+        results['No of hr in Humidity range (40-50)'].append(len(df6))
+        results['No of hr in Humidity range (50-60)'].append(len(df7))
+        results['No of hr in Humidity range (60-70)'].append(len(df8))
+        results['No of hr in Humidity range (70-80)'].append(len(df9))
+        results['No of hr in Humidity range (80-90)'].append(len(df10))
+        results['No of hr in Humidity range (90-100)'].append(len(df11))
 
     result_df = pd.DataFrame(results)
     st.dataframe(result_df)
