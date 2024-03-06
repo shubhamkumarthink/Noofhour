@@ -29,8 +29,8 @@ start_time, end_time = appointment
 minhour = start_time.hour
 maxhour = end_time.hour
 
-x = st.number_input("Enter min value of temperature of range & Press Enter: ", value=None, min_value= -100, max_value= 100, placeholder="Type a number and press enter...")
-y1 = st.number_input("Enter max value of temperature of range & Press Enter: ", value=None, min_value= x, max_value= 100, placeholder="Type a number and press enter...")
+x = st.number_input("Enter min value of temperature of range & Press Enter: ", value=None, min_value= -100, max_value= 100, placeholder="Type a number... & press enter.")
+y1 = st.number_input("Enter max value of temperature of range & Press Enter: ", value=None, min_value= x, max_value= 100, placeholder="Type a number... & press enter.")
 
 
 button0 = st.button("Visualize")
