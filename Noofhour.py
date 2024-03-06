@@ -20,6 +20,8 @@ st.dataframe(data)
 
 # minhour = st.number_input("Enter min value of hour of range (from 0 to 23): ", value=None, min_value=0, max_value=23, placeholder="Type a number...")
 # maxhour = st.number_input("Enter max value of hour of range (upto 23): ", value=None, min_value=0, max_value=23, placeholder="Type a number...")
+x = 5
+y1 = 45
 
 appointment = st.slider(
     "Select the range of hour:",
@@ -29,8 +31,8 @@ start_time, end_time = appointment
 minhour = start_time.hour
 maxhour = end_time.hour
 
-x = st.number_input("Enter min value of temperature of range & Press Enter: ", value=None, min_value= -100, max_value= 100, placeholder="Type a number...")
-y1 = st.number_input("Enter max value of temperature of range in integer & Press Enter: ", value=None, min_value= x, max_value= 100, placeholder="Type a number...")
+x = st.number_input("Enter min value of temperature of range & Press Enter: ", value=None, min_value= -100, max_value= 100, placeholder="Type a number and press enter...(default = 5")
+y1 = st.number_input("Enter max value of temperature of range & Press Enter: ", value=None, min_value= x, max_value= 100, placeholder="Type a number and press enter...(default = 45)")
 
 
 button0 = st.button("Visualize")
